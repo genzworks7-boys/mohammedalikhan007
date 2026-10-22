@@ -2622,17 +2622,57 @@ export const ProductsPage = ({
           }
 
           /* Lightbox Modal on Mobile */
-          .modal-body-layout {
-            grid-template-columns: 1fr;
-            gap: 1.25rem;
+          .product-modal {
+            padding: 1rem 1rem 1.25rem;
+            max-height: 92dvh;
+            max-height: 92vh;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            border-radius: var(--radius-lg);
           }
 
-          .product-modal {
-            padding: 1.5rem 1.25rem;
+          .modal-body-layout {
+            grid-template-columns: 1fr;
+            gap: 0.85rem;
           }
 
           .modal-img-frame {
-            height: 220px;
+            height: 180px;
+          }
+
+          .modal-product-info h2 {
+            font-size: 1.15rem;
+            margin-bottom: 0.3rem;
+          }
+
+          .pack-info {
+            font-size: 0.82rem;
+            margin-bottom: 0.5rem;
+          }
+
+          .modal-desc {
+            font-size: 0.82rem;
+            margin-bottom: 0.85rem;
+          }
+
+          .modal-price-strip {
+            padding: 0.6rem 0.85rem;
+            margin-bottom: 1rem;
+          }
+
+          .price-tag-big {
+            font-size: 1.3rem;
+          }
+
+          .modal-qty-action {
+            gap: 0.75rem;
+          }
+
+          .modal-close-btn {
+            top: 10px;
+            right: 10px;
+            width: 28px;
+            height: 28px;
           }
         }
       `}</style>

@@ -216,14 +216,15 @@ export const HomePage = ({ setCurrentPage, setSelectedCategory }) => {
           playsInline
           webkit-playsinline="true"
           preload="auto"
-          poster="/images/home_hero_bg.jpg?v=2"
+          poster="/images/home_hero_bg_4k.webp"
         >
-          <source src="/videos/cracker_wp_enhance.mp4" type="video/mp4" />
+          <source src="/videos/hero_bg_wp.mp4" type="video/mp4" />
           <source src="/videos/hero_fireworks_bg.mp4" type="video/mp4" />
+          <source src="/videos/cracker_wp_enhance.mp4" type="video/mp4" />
         </video>
         <div 
           className="hero-backdrop" 
-          style={{ backgroundImage: `url('/images/home_hero_bg.jpg?v=2')` }}
+          style={{ backgroundImage: `url('/images/home_hero_bg_4k.webp')` }}
         />
         <div className="hero-overlay" />
 
@@ -410,7 +411,7 @@ export const HomePage = ({ setCurrentPage, setSelectedCategory }) => {
                         decoding="async"
                         onError={(e) => { e.currentTarget.src = '/images/sharp_crackers_brand_logo.jpg'; }}
                       />
-                      <span className="slide-discount-tag">{discount}% OFF</span>
+
                       <div className="slide-star-badge">
                         <Star size={11} fill="#ffb703" color="#ffb703" />
                         <span>Best Seller</span>
@@ -505,7 +506,7 @@ export const HomePage = ({ setCurrentPage, setSelectedCategory }) => {
                       loading="eager"
                       onError={(e) => { e.currentTarget.src = '/images/sharp_crackers_brand_logo.jpg'; }}
                     />
-                    <span className="gift-discount-pill">{discount}% OFF</span>
+
                     <span className="gift-festive-tag">Diwali Special</span>
                   </div>
 
@@ -645,8 +646,7 @@ export const HomePage = ({ setCurrentPage, setSelectedCategory }) => {
           background-position: center bottom;
           background-repeat: no-repeat;
           z-index: 2;
-          opacity: 0.22;
-          mix-blend-mode: screen;
+          opacity: 0.85;
           pointer-events: none;
         }
 
@@ -655,9 +655,9 @@ export const HomePage = ({ setCurrentPage, setSelectedCategory }) => {
           inset: 0;
           background: linear-gradient(
             to right,
-            rgba(5, 10, 24, 0.88) 0%,
-            rgba(5, 10, 24, 0.60) 50%,
-            rgba(5, 10, 24, 0.28) 100%
+            rgba(5, 10, 24, 0.94) 0%,
+            rgba(5, 10, 24, 0.72) 48%,
+            rgba(5, 10, 24, 0.35) 100%
           );
           z-index: 3;
           pointer-events: none;
@@ -812,12 +812,13 @@ export const HomePage = ({ setCurrentPage, setSelectedCategory }) => {
         /* Categories Grid */
         .categories-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+          grid-template-columns: repeat(6, 1fr);
           gap: 1.85rem;
           perspective: 1000px;
         }
 
         .category-card {
+          grid-column: span 2;
           position: relative;
           background: #ffffff;
           border-radius: var(--radius-lg);
@@ -831,6 +832,14 @@ export const HomePage = ({ setCurrentPage, setSelectedCategory }) => {
           transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
                       box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
                       border-color 0.35s ease;
+        }
+
+        .category-card:nth-child(13) {
+          grid-column: 2 / span 2;
+        }
+
+        .category-card:nth-child(14) {
+          grid-column: 4 / span 2;
         }
 
         /* Classy Glass / Specular Holographic Reflection Beam (Sheen Sweep) */
@@ -1601,6 +1610,15 @@ export const HomePage = ({ setCurrentPage, setSelectedCategory }) => {
           .promo-content {
             padding: 2.5rem 1.5rem;
           }
+          .categories-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+          }
+          .category-card,
+          .category-card:nth-child(13),
+          .category-card:nth-child(14) {
+            grid-column: auto !important;
+          }
         }
 
         @media (max-width: 768px) {
@@ -1634,8 +1652,13 @@ export const HomePage = ({ setCurrentPage, setSelectedCategory }) => {
             gap: 0.5rem;
           }
           .categories-grid {
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 1.25rem;
+          }
+          .category-card,
+          .category-card:nth-child(13),
+          .category-card:nth-child(14) {
+            grid-column: auto !important;
           }
           .category-card:active {
             transform: scale(0.985) !important;

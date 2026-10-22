@@ -5,14 +5,14 @@
 
 import React from 'react';
 import { useCart } from '../context/CartContext';
-import { 
-  Flame, 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Clock, 
-  ShieldCheck, 
-  ChevronRight, 
+import {
+  Flame,
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  ShieldCheck,
+  ChevronRight,
   Sparkles,
   Lock
 } from 'lucide-react';
@@ -69,9 +69,9 @@ export const Footer = ({ setCurrentPage }) => {
           <div className="footer-col brand-col">
             <div className="footer-brand" onClick={() => handleNav('home')}>
               <div className="footer-logo-frame">
-                <img 
-                  src={settings.logoUrl || "/images/sharp_crackers_brand_logo.jpg"} 
-                  alt="Sharp Crackers" 
+                <img
+                  src={settings.logoUrl || "/images/sharp_crackers_brand_logo.jpg"}
+                  alt="Sharp Crackers"
                   className="footer-logo-img"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   onError={(e) => { e.currentTarget.src = '/images/sharp_crackers_brand_logo.jpg'; }}
@@ -193,7 +193,7 @@ export const Footer = ({ setCurrentPage }) => {
       <div className="footer-bottom">
         <div className="container bottom-content">
           <div>
-            © {new Date().getFullYear()} <strong>SHARP CRACKERS</strong>. All Rights Reserved. Manufactured and marketed in Sivakasi, India.
+            © {new Date().getFullYear()} <strong>SHARP CRACKERS</strong>. All Rights Reserved. Manufactured and marketed in Sivakasi, India. | Designed & Developed by <strong style={{ color: '#ffd166' }}>GEN-Z WORKS</strong>, Coimbatore Tamil Nadu India.
           </div>
           <div className="bottom-safety-badge">
             <span>Always follow standard firework safety precautions. Light responsibly.</span>

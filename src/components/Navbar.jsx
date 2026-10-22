@@ -145,8 +145,7 @@ export const Navbar = ({ currentPage, setCurrentPage, onSearchOpen }) => {
             </div>
             <div className="brand-text-col">
               <div className="brand-name">
-                <span className="brand-name-sharp">SHARP</span>
-                <span className="brand-name-crackers">CRACKERS</span>
+                <span className="brand-name-sharp">SHARP</span><span className="brand-name-crackers">CRACKERS</span>
               </div>
             </div>
           </div>
@@ -168,7 +167,7 @@ export const Navbar = ({ currentPage, setCurrentPage, onSearchOpen }) => {
               size="md"
               bounce={0.3}
               stretch={0.5}
-              collapse="auto"
+              collapse="never"
               intro
               theme="dark"
               highlightColor="#ff6f00"
@@ -559,14 +558,15 @@ export const Navbar = ({ currentPage, setCurrentPage, onSearchOpen }) => {
           line-height: 1;
           display: flex;
           align-items: center;
-          gap: 0.45rem;
+          gap: 0.22rem;
           white-space: nowrap;
         }
 
-        .brand-name-sharp {
+        .brand-name-sharp,
+        .brand-name-crackers {
           display: inline-block;
-          padding-left: 3px;
-          padding-right: 1px;
+          padding-left: 0;
+          padding-right: 0;
           color: #ffb703;
           background: linear-gradient(180deg, #ffffff 0%, #ffd166 45%, #ffb703 100%);
           -webkit-background-clip: text;
@@ -574,19 +574,6 @@ export const Navbar = ({ currentPage, setCurrentPage, onSearchOpen }) => {
           background-clip: text;
           font-weight: 950;
           filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.95)) drop-shadow(0 2px 10px rgba(255, 183, 3, 0.5));
-        }
-
-        .brand-name-crackers {
-          display: inline-block;
-          padding-right: 2px;
-          color: #ff5e00;
-          background: linear-gradient(180deg, #ff8533 0%, #ff5e00 50%, #d90429 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          font-weight: 900;
-          font-style: italic;
-          filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.95)) drop-shadow(0 2px 10px rgba(217, 4, 41, 0.5));
         }
 
         .mobile-drawer-brand {
@@ -1199,7 +1186,7 @@ export const Navbar = ({ currentPage, setCurrentPage, onSearchOpen }) => {
           text-decoration: none;
         }
 
-        @media (min-width: 1367px) {
+        @media (min-width: 993px) {
           .nav-content {
             display: grid;
             grid-template-columns: 1fr auto 1fr;
@@ -1223,12 +1210,6 @@ export const Navbar = ({ currentPage, setCurrentPage, onSearchOpen }) => {
             padding-left: 1.25rem;
             padding-right: 1.25rem;
           }
-          .nav-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 0.75rem;
-          }
           .nav-brand {
             gap: 0.65rem;
             flex-shrink: 0;
@@ -1247,8 +1228,6 @@ export const Navbar = ({ currentPage, setCurrentPage, onSearchOpen }) => {
           }
           .desktop-links {
             gap: 0.35rem;
-            flex: 1;
-            justify-content: center;
           }
           .nav-link-btn {
             padding: 0.45rem 0.85rem;
@@ -1326,7 +1305,7 @@ export const Navbar = ({ currentPage, setCurrentPage, onSearchOpen }) => {
           }
           .brand-name {
             font-size: clamp(1.05rem, 3.8vw, 1.35rem);
-            gap: 0.35rem;
+            gap: 0.18rem;
           }
           .nav-actions {
             flex: 0 0 auto !important;
@@ -1347,7 +1326,7 @@ export const Navbar = ({ currentPage, setCurrentPage, onSearchOpen }) => {
           .brand-name {
             font-size: clamp(0.95rem, 4.2vw, 1.15rem);
             letter-spacing: 0.2px;
-            gap: 0.25rem;
+            gap: 0.15rem;
           }
           .brand-logo-frame {
             width: 42px;
@@ -1409,10 +1388,10 @@ export const Navbar = ({ currentPage, setCurrentPage, onSearchOpen }) => {
           }
           .brand-name {
             font-size: 0.92rem;
-            gap: 0.18rem;
+            gap: 0.12rem;
           }
           .brand-name-sharp {
-            padding-left: 2px;
+            padding-left: 0;
           }
           .nav-actions {
             gap: 0.25rem;
